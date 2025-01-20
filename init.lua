@@ -629,6 +629,8 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        gopls = {},
+        pyright = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -661,6 +663,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'ruff', -- Python formatter and linter. Conform use it via lsp_fallback.
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
